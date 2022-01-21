@@ -4,7 +4,7 @@ import data from '../data/Data';
 
 
 const Product = ({addToCart}) => {
-    console.log(data);
+    //console.log(data);
   return(
     <div>
         {
