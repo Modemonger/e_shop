@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Card, Button } from 'react-bootstrap';
 import data from '../data/Data';
 
 
 const Product = ({addToCart}) => {
-    //console.log(data);
+    
+    const [inStock, setInStock] = useState(data);
+
   return(
     <div>
         {
