@@ -9,6 +9,8 @@ const Cart = ({product, removeFromCart}) => {
     return product.reduce(reducer, 0);
   };
 
+
+  if(product.length)
   return (    
     <div>
       <h1>Cart</h1>
@@ -41,6 +43,13 @@ const Cart = ({product, removeFromCart}) => {
       </table>
     </div>
   ) 
+
+  else
+      return(
+        <div>
+          Sorry your cart is empty
+        </div>
+      )
 };
 
 export default Cart;

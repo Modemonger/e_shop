@@ -31,7 +31,7 @@ const ProductsList = () => {
                 productInCart.countInStock--;
             }
             else {
-                console.log("sorry out of stock");
+                window.alert('oh no fucky whucky no more item piss off');
             }
 
         setProduct(newCart);
