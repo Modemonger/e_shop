@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
-const Cart = ({product, removeFromCart}) => {
-  console.log(product);
+const Cart = ({product, removeFromCart, increment, decrement, clearCart}) => {
+  //console.log(product);
   const getTotal = () =>{
     const reducer = (previousValue, {price, quantity}) => previousValue + price*quantity;
     if(product)
@@ -17,7 +17,8 @@ const Cart = ({product, removeFromCart}) => {
       <table>
         <thead>
           <tr>
-            <td colSpan={3}>Bendra suma: {getTotal()}</td>
+            <td colSpan={3}>Total price: {getTotal()}</td>
+            <td colSpan={2}><Button variant="danger" onClick={(event) => {clearCart(event, product)}}>Clear cart</Button></td>
           </tr>
           <tr>
             <td>#</td>
@@ -33,7 +34,7 @@ const Cart = ({product, removeFromCart}) => {
               <tr key={index}>
                 <td>{index+1}</td>
                 <td>{item.name}</td>
-                <td>{item.quantity}</td>
+                <td><Button onClick={(event) => {increment(event, item)}}>+</Button>{item.quantity}<Button onClick={(event) => {decrement(event, item)}}>-</Button></td>
                 <td>{item.price * item.quantity}</td>
                 <td><Button variant="danger" onClick={(event) => {removeFromCart(event, item)}}>Remove</Button></td>
               </tr>
@@ -47,7 +48,7 @@ const Cart = ({product, removeFromCart}) => {
   else
       return(
         <div>
-          Sorry your cart is empty
+          Sorry your cart is empty, dumbass
         </div>
       )
 };

@@ -4,8 +4,6 @@ import data from '../data/Data';
 
 
 const Product = ({addToCart}) => {
-    
-    const [inStock, setInStock] = useState(data);
 
   return(
     <div>
