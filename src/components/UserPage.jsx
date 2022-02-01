@@ -4,6 +4,7 @@ import EntryList from './EntryList';
 import InputForm from './InputForm';
 import LoginPage from './LoginPage';
 import NavBar from './NavBar';
+import Statistics from './Statistics';
 
 const UserPage = () => {
   return (
@@ -13,6 +14,7 @@ const UserPage = () => {
                     
                 </div>
                 <EntryList />
+                <Statistics />
             </div>
     );
 };
